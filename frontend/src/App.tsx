@@ -5,6 +5,7 @@ import CharacterManager from './components/CharacterManager';
 import PWAInstallPrompt from './components/PWAInstallPrompt';
 import { theme } from './theme/theme';
 import { SpeedInsights } from '@vercel/speed-insights/react';
+import { Analytics } from '@vercel/analytics/react';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Toaster />
       </ThemeProvider>
       <SpeedInsights />
+      <Analytics />
     </>
   );
 }
