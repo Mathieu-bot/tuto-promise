@@ -1,6 +1,10 @@
 import { promises as fs } from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
-const FILE_PATH = 'user.json';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const FILE_PATH = path.join(__dirname, '..', 'user.json');
 
 export const readCharacters = async () => {
   try {
@@ -8,7 +12,7 @@ export const readCharacters = async () => {
     const parsed = JSON.parse(data);
     return parsed;
   } catch (error) {
-    throw new Error('Failed to read or parse characters');
+    console.error('Error reading characters:', error);
   }
 }
 
