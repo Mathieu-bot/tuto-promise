@@ -7,7 +7,11 @@ const app = express();
 
 // Enable CORS for frontend communication
 app.use(cors({
-  origin: 'http://localhost:5173', // Vite default port
+  origin: [
+    'http://localhost:5173', // Vite default port (development)
+    'https://your-frontend-domain.vercel.app', // Production URL (à remplacer)
+    'https://your-frontend-domain.netlify.app' // Ou Netlify URL (à remplacer)
+  ],
   credentials: true
 }));
 
