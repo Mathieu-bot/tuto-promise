@@ -5,7 +5,8 @@ const FILE_PATH = 'user.json';
 export const readCharacters = async () => {
   try {
     const data = await fs.readFile(FILE_PATH, 'utf-8');
-    return JSON.parse(data);
+    const parsed = JSON.parse(data);
+    return parsed;
   } catch (error) {
     throw new Error('Failed to read or parse characters');
   }
