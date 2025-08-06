@@ -1,8 +1,15 @@
 import express from "express";
+import cors from "cors";
 import "dotenv/config";
 import router from "./routes/characters.js";
 
 const app = express();
+
+// Enable CORS for frontend communication
+app.use(cors({
+  origin: 'http://localhost:5173', // Vite default port
+  credentials: true
+}));
 
 app.use(express.json()); //parse the JSON (middleware)
 app.use("/characters", router);

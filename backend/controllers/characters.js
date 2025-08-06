@@ -33,6 +33,7 @@ export const createCharacter = async (req, res) => {
       name: req.body.name,
       realName: req.body.realName,
       universe: req.body.universe,
+      imageUrl: req.body.imageUrl,
     };
     characters.push(newCharacter);
     await writeCharacters({ characters });
@@ -54,6 +55,7 @@ export const updateCharacter = async (req, res) => {
     character.name = req.body.name;
     character.realName = req.body.realName;
     character.universe = req.body.universe;
+    character.imageUrl = req.body.imageUrl;
     await writeCharacters({ characters });
     res.status(200).json(character);
   } catch (error) {
