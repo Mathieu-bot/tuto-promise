@@ -43,6 +43,7 @@ const CompactSidebar = ({
         position: 'fixed',
         left: 0,
         top: 0,
+        gap: 1,
         zIndex: 1200,
         boxShadow: '2px 0 8px rgba(0,0,0,0.1)',
       }}
@@ -53,6 +54,7 @@ const CompactSidebar = ({
       <Tooltip 
         title={viewMode === 'grid' ? 'Switch to List View' : 'Switch to Grid View'} 
         placement="right"
+        arrow
       >
         <IconButton 
           onClick={handleViewToggle}
@@ -67,7 +69,7 @@ const CompactSidebar = ({
       </Tooltip>
 
       {/* Create Character */}
-      <Tooltip title="Create New Character" placement="right">
+      <Tooltip title="Create New Character" placement="right" arrow>
         <IconButton 
           onClick={onCreateNew}
           className="mb-2 animated-button fab-pulse"
